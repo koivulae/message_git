@@ -1,9 +1,18 @@
 package Server;
 
-public class Dao {
+import java.util.List;
 
-	public Dao() {
-		// TODO Auto-generated constructor stub
-	}
+/*
+ * {@link Dao} on tietokannan rajapinta, jossa m‰‰ritet‰‰n tietokannan metodit.
+ */
+public interface Dao {
+
+	public void insertMessage(Message message);
+	public void insertUser(User user);
+	public void insertConversation(Conversation conversation);
+	public List<Conversation> getConversations(String order, String senderUuid);
+	public User getUser(String username);
+	public Conversation getConversation(String sender, String receiver);
+	public Message getNewestMessage(Conversation conversation);
 
 }
